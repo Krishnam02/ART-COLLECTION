@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fdf7f7; /* Soft pink background */
+            margin: 0;
+            padding: 0;
+        }
+        section#contact {
+            background-color: #ffffff;
+            padding: 60px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        section#contact h1 {
+            font-size: 42px;
+            color: #b56576; /* Elegant wedding-themed color */
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        section#contact p {
+            font-size: 18px;
+            color: #6e6e6e;
+            margin-bottom: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form label {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+            width: 100%;
+            text-align: left;
+        }
+        form input, form textarea {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f7f3f3;
+        }
+        form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #b56576;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #9d4e62;
+        }
+    </style>
+</head>
+<body>
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Please reach out for inquiries or to schedule a consultation.</p>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>

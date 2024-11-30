@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fdf7f7;
+            margin: 0;
+            padding: 0;
+        }
+        section#services {
+            background-color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            position: relative; /* Required to allow absolute positioning inside */
+        }
+        section#services h1 {
+            font-size: 48px;
+            color: #b56576;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        ul li {
+            background-color: #f7f3f3;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 20px;
+            flex: 0 0 48%; /* Each item will take 48% of the width */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: relative; /* Required to position the images correctly */
+        }
+        ul li strong {
+            color: #b56576;
+            font-size: 24px;
+        }
+        ul li img {
+            width: 150px; /* Adjust the width of the image */
+            height: 150px; /* Adjust the height of the image */
+            position: absolute;
+            top: 50%;
+            right: -170px; /* Adjusts the distance of the image from the box */
+            transform: translateY(-50%); /* Centers the image vertically */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* CTA Button */
+        .cta-btn {
+            padding: 15px 30px;
+            background-color: #b56576;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 40px;
+        }
+        /* Full-Width Sections for Media */
+        .media-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f3f3f3;
+        }
+        .media-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #b56576;
+        }
+        .media-section img, .media-section video {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Our Services Section -->
+    <section id="services">
+        <h1>Our Services</h1>
+        <ul>
+            <li>
+                <strong>Wedding Planning:</strong> From venue selection to day-of coordination, we handle every detail of your special day.
+                <img src="weddingplanning.png" alt="Wedding Icon">
+            </li>
+            <li>
+                <strong>Corporate Events:</strong> Professional planning for meetings, conferences, and team-building activities.
+                <img src="customironwork.png" alt="Corporate Icon">
+            </li>
+            <li>
+                <strong>Special Occasions:</strong> Whether it's anniversaries, baby showers, or family reunions, we've got you covered!
+                <img src="so.png" alt="Special Occasions Icon">
+            </li>
+            <li>
+                <strong>Custom Ironwork:</strong> We also manufacture iron and steel products like gates, railings, candle stands, and flower pots.
+                <img src="customironwork.png" alt="Ironwork Icon">
+            </li>
+        </ul>
+        <button class="cta-btn" onclick="location.href='contact.html'">Get in Touch</button>
+    </section>
+
+    <!-- Add a Media Section (Image/Video of Services) -->
+    <section class="media-section">
+        <h2>See Our Work in Action</h2>
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+    </section>
+
+</body>
+</html>
