@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="LOGO.PNG">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART COLLECTION</title>
+    <style>
+        /* Reset and Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo img {
+            height: 60px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #b56576;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('banner.jpg'); /* Replace with your banner image */
+            background-size: cover;
+            background-position: center;
+            height: 94vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            text-align: center;
+            margin-top: 60px; /* Height of the fixed header */
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #b56576;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #933d54;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 36px;
+            color: #b56576;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        .service-item {
+            flex: 1 1 300px;
+            background-color: #f7f3f3;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        .service-item img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .service-item h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .service-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Companies Section */
+        .companies {
+            padding: 80px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .companies h2 {
+            font-size: 36px;
+            color: #b56576;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .company-logos img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .company-logos img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: 36px;
+            color: #b56576;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+        .testimonial-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .testimonial {
+            background-color: #f7f3f3;
+            padding: 30px;
+            border-left: 5px solid #b56576;
+            position: relative;
+            font-style: italic;
+            color: #6e6e6e;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .testimonial::before {
+            content: "“";
+            font-size: 60px;
+            color: #b56576;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        .testimonial::after {
+            content: "”";
+            font-size: 60px;
+            color: #b56576;
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+        }
+        .testimonial h4 {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Reach Us Section */
+        .reach-us {
+            padding: 80px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .reach-us h2 {
+            font-size: 36px;
+            color: #b56576;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+        .reach-us form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .reach-us input, .reach-us textarea {
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .reach-us button {
+            padding: 15px 30px;
+            background-color: #b56576;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .reach-us button:hover {
+            background-color: #933d54;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 40px 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        footer .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer .social-icons a img {
+            width: 30px;
+            transition: transform 0.3s ease;
+        }
+        footer .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero .tagline {
+                font-size: 18px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                background-color: #444;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                display: none;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            header {
+                position: relative;
+            }
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+            }
+            .services-grid, .company-logos {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service-item, .company-logos img {
+                width: 80%;
+            }
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO.PNG" alt="Your Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>ART COLLECTION</h1>
+            <p class="tagline">A name before events and weddings.</p>
+            <a href="#reach-us" class="cta-button">Let's Connect</a>
+        </div>
+    </section>
+    
+    <style>
+        .hero {
+            background-image: url('HERO.PNG'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Full viewport height */
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+    
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay */
+        }
+    
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    
+
+    <!-- Companies we have worked with -->
+<section class="companies" id="companies">
+    <h2>OUR HAPPY CLIENTS</h2>
+    <div class="company-logos">
+        <div class="company-item">
+            <img src="MG.LOGO.jpg" alt="MG Logo">
+        </div>
+        <div class="company-item">
+            <img src="LEMON TREE.PNG" alt="Lemon Tree Logo">
+        </div>
+        <div class="company-item">
+            <img src="RK MARBLE.PNG" alt="RK Marble Logo">
+            </div>
+            <div class="company-item">
+                <img src="RAMBAGH.PNG" alt="RAM BAGH">
+             </div>
+             </section>
+
+             <!-- Reach Us Section (Let's Connect) -->
+<section class="reach-us" id="reach-us">
+    <h2>Let's Connect</h2>
+    <p>We would love to hear from you! Please fill out the form below, and we'll get in touch as soon as possible.</p>
+    <form action="submit_form.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 ART COLLECTION. All Rights Reserved.</p>
+</footer>
+
+<!-- Add this CSS to style the 'Let's Connect' section -->
+<style>
+    .reach-us {
+        padding: 80px 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+    .reach-us h2 {
+        font-size: 36px;
+        color: #b56576;
+        margin-bottom: 20px;
+        font-family: 'Playfair Display', serif;
+    }
+    .reach-us p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 40px;
+    }
+    .reach-us form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .reach-us input, .reach-us textarea {
+        padding: 15px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .reach-us button {
+        padding: 15px 30px;
+        background-color: #b56576;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .reach-us button:hover {
+        background-color: #933d54;
+    }
+</style>
+
+
+ 56
